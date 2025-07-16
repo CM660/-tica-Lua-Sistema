@@ -1,13 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Sistemática Lua</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ótica Lua - Sistema Profissional</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bem-vindo à Sistemática Lua</h1>
-    <img src="logo-oticas-lua.jpg" alt="Logo Óticas Lua">
-    <script src="app.js"></script>
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="logo-oticas-lua.jpg" alt="Logo Óticas Lua" class="logo" />
+      <h2>Ótica Lua</h2>
+    </div>
+    <ul id="menu">
+      <li class="active" onclick="navigate('dashboard')"><i class="fas fa-home"></i>Dashboard</li>
+      <li onclick="navigate('agendamentos')"><i class="fas fa-calendar-alt"></i>Agendamentos</li>
+      <li onclick="navigate('vendas')"><i class="fas fa-shopping-cart"></i>Vendas</li>
+      <li onclick="navigate('clientes')"><i class="fas fa-user"></i>Clientes</li>
+      <li onclick="navigate('estoque')"><i class="fas fa-boxes"></i>Estoque</li>
+      <li onclick="navigate('relatorios')"><i class="fas fa-chart-line"></i>Relatórios</li>
+      <li onclick="navigate('funcionarios')"><i class="fas fa-users"></i>Funcionários</li>
+      <li onclick="navigate('admin')"><i class="fas fa-cog"></i>Administração</li>
+      <li><a href="https://wa.me/5574981068789" target="_blank" style="color:white;"><i class="fab fa-whatsapp"></i>Suporte</a></li>
+      <li onclick="logout()"><i class="fas fa-sign-out-alt"></i>Sair</li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div id="login" class="login-box" aria-label="Login">
+      <h2>Login</h2>
+      <input type="text" id="user" placeholder="Usuário" autocomplete="username">
+      <input type="password" id="pass" placeholder="Senha" autocomplete="current-password">
+      <button onclick="login()">Entrar</button>
+      <p id="erroLogin" class="error"></p>
+    </div>
+
+    <div id="conteudo" style="display:none">
+      <section id="dashboard" class="section active">
+        <div class="header">Dashboard</div>
+        <div class="dashboard-welcome">
+          <p>Bem-vindo ao sistema da Ótica Lua!</p>
+        </div>
+      </section>
+      <section id="agendamentos" class="section">
+        <div class="header">Agendamentos</div>
+        <p>Área para gerenciar agendamentos.</p>
+      </section>
+      <section id="vendas" class="section">
+        <div class="header">Vendas</div>
+        <p>Área para registrar e consultar vendas.</p>
+      </section>
+      <section id="clientes" class="section">
+        <div class="header">Clientes</div>
+        <p>Cadastro e gerenciamento de clientes.</p>
+      </section>
+      <section id="estoque" class="section">
+        <div class="header">Estoque</div>
+        <p>Cadastro e controle de óculos e armações.</p>
+      </section>
+      <section id="relatorios" class="section">
+        <div class="header">Relatórios</div>
+        <p>Relatórios financeiros e de vendas.</p>
+      </section>
+      <section id="funcionarios" class="section">
+        <div class="header">Funcionários</div>
+        <p>Cadastro e controle de acessos dos funcionários.</p>
+      </section>
+      <section id="admin" class="section">
+        <div class="header">Administração</div>
+        <p>Área exclusiva do dono para editar e excluir dados.</p>
+      </section>
+    </div>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/5574981068789" target="_blank" aria-label="WhatsApp Suporte">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <script src="app.js"></script>
 </body>
 </html>

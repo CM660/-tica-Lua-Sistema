@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  background-color: #f4f6f9;
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1b1f3b;
+  color: white;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 18px;
+  object-fit: contain;
+  background: #1b1f3b;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+.sidebar h2 {
+  text-align: center;
+  color: #00bcd4;
+  font-size: 1.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+  cursor: pointer;
+  border-left: 5px solid transparent;
+  transition: background 0.2s, border-left 0.2s;
+}
+.sidebar ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background-color: #2c305c;
+  border-left: 5px solid #00bcd4;
+}
+.sidebar ul li i {
+  margin-right: 10px;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background: #f4f6f9;
+  min-width: 0;
+}
+
+.section {
+  display: none;
+  animation: fadein 0.6s;
+}
+.section.active {
+  display: block;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1b1f3b;
+}
+
+.login-box {
+  margin: 100px auto;
+  text-align: center;
+  max-width: 350px;
+  background: white;
+  padding: 35px 25px 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.login-box input,
+.login-box button {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+}
+.login-box input:focus {
+  border-color: #00bcd4;
+}
+.login-box button {
+  background: #00bcd4;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.login-box button:hover {
+  background: #0097a7;
+}
+
+.error {
+  color: #e53935;
+  min-height: 28px;
+}
+
+.dashboard-welcome {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25D366;
+  color: white;
+  padding: 18px;
+  border-radius: 50%;
+  font-size: 26px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  z-index: 999;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .dashboard-welcome {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sidebar {
+    width: 64px;
+  }
+  .sidebar h2, .brand .logo {
+    display: none;
+  }
+  .sidebar ul li {
+    font-size: 0;
+    padding: 15px 10px;
+    text-align: center;
+  }
+  .sidebar ul li i {
+    margin: 0;
+    font-size: 22px;
+  }
+}
